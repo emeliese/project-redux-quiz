@@ -38,66 +38,73 @@ export const QuestionOne = () => {
 
   return (
     <div>
-      <div className="option-container">
-        <span className="progress">Question {question.id}/5</span>
-        <div className="question">
-          <h2>{question.questionText}</h2>
-        </div>
-        <div className="option-button">
-          <button
-            onClick={() => submit(0)}
-            className={`${answerSelected && selectedAnswerIndex === 0
+    <div className="option-container">
+      <span className="progress">Question {question.id}/5</span>
+      <div className="question">
+        <h2>{question.questionText}</h2>
+      </div>
+
+      <div className="option-button">
+        <button
+          onClick={() => submit(0)}
+          className={`${
+            answerSelected && selectedAnswerIndex === 0
               ? selectedAnswerIndex === question.correctAnswerIndex
                 ? "correct"
                 : "incorrect"
               : ""
-              }`}
-            disabled={answerSelected}
-          >
-            {question.options[0]}
-          </button>
-        </div>
-        <div className="option-button">
-          <button
-            onClick={() => submit(1)}
-            className={`${answerSelected && selectedAnswerIndex === 1
+          } ${answerSelected ? "disabled" : ""}`}
+          disabled={answerSelected}
+        >
+          {question.options[0]}
+        </button>
+      </div>
+
+      <div className="option-button">
+        <button
+          onClick={() => submit(1)}
+          className={`${
+            answerSelected && selectedAnswerIndex === 1
               ? selectedAnswerIndex === question.correctAnswerIndex
                 ? "correct"
                 : "incorrect"
               : ""
-              }`}
-            disabled={answerSelected}
-          >
-            {question.options[1]}
-          </button>
-        </div>
-        <div className="option-button">
-          <button
-            onClick={() => submit(2)}
-            className={`${answerSelected && selectedAnswerIndex === 2
-                ? selectedAnswerIndex === question.correctAnswerIndex
-                  ? "correct"
-                  : "incorrect"
-                : ""
-              }`}
-            disabled={answerSelected}
-          >
-            {question.options[2]}
-          </button>
-        </div>
-        <div className="eval">
-          {selectedAnswerIndex !== null && (
-            <div>
-              {selectedAnswerIndex === question.correctAnswerIndex ? (
-                <div>Correct!</div>
-              ) : (
-                <div>Incorrect!</div>
-              )}
-            </div>
-          )}
-        </div>
+          } ${answerSelected ? "disabled" : ""}`}
+          disabled={answerSelected}
+        >
+          {question.options[1]}
+        </button>
+      </div>
+
+      <div className="option-button">
+        <button
+          onClick={() => submit(2)}
+          className={`${
+            answerSelected && selectedAnswerIndex === 2
+              ? selectedAnswerIndex === question.correctAnswerIndex
+                ? "correct"
+                : "incorrect"
+              : ""
+          } ${answerSelected ? "disabled" : ""}`}
+          disabled={answerSelected}
+        >
+          {question.options[2]}
+        </button>
+      </div>
+
+      <div className="eval">
+        {selectedAnswerIndex !== null && (
+          <div>
+            {selectedAnswerIndex === question.correctAnswerIndex ? (
+              <div>Correct!</div>
+            ) : (
+              <div>Incorrect!</div>
+            )}
+          </div>
+        )}
       </div>
     </div>
+  </div>
   );
 };
 
