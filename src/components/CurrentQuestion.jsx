@@ -47,7 +47,7 @@ export const CurrentQuestion = () => {
         </button>
         {isOver === false && (
           <button onClick={nextQuestion} className="next">
-            Next question please!
+            Next
           </button>
         )}
       </div>
