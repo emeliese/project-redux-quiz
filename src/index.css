@@ -13,6 +13,9 @@ code {
     monospace;
 }
 
+.option-button {
+  place-self: center;
+}
 .option-button button {
   border-radius: 30px;
   background-color: rgb(62, 149, 184);
@@ -21,8 +24,8 @@ code {
   font-size: large;
   border-style: hidden;
   transition: background-color 0.1s;
-  pointer-events: auto; 
-  opacity: 1; 
+  pointer-events: auto;
+  opacity: 1;
 }
 
 .option-button button.correct {
@@ -95,12 +98,6 @@ code {
   margin: 1rem;
 }
 
-.one,
-.two,
-.three {
-  place-self: center;
-}
-
 .footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -111,6 +108,7 @@ code {
   border-radius: 30px;
   background-color: rgb(62, 149, 184);
   padding: 1rem;
+  margin: 1rem;
   color: white;
   font-size: large;
   border-style: hidden;
@@ -136,5 +134,3 @@ code {
   font-weight: 500;
   margin: 1.5rem;
 }
-
-
