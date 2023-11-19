@@ -20,25 +20,19 @@ button {
   color: white;
   font-size: large;
   border-style: hidden;
+  transition: background-color 0.1s;
 }
+
 button:hover {
-  border-radius: 30px;
   box-shadow: 2px 2px 2px black;
   background-color: rgb(113, 38, 205);
-  padding: 1rem;
-  color: white;
   font-size: larger;
-  border-style: hidden;
-  transition: 0.1s;
 }
+
 button:active {
-  border-radius: 30px;
   background-color: rgb(39, 100, 120);
-  padding: 1rem;
-  color: white;
   font-size: larger;
-  border-style: hidden;
-  transition: 0.3s;
+  transition: background-color 0.3s;
 }
 
 .option-button button {
@@ -48,26 +42,33 @@ button:active {
   color: white;
   font-size: large;
   border-style: hidden;
+  transition: background-color 0.1s;
+  pointer-events: auto; /* set to 'auto' initially */
+  opacity: 1; /* set to '1' initially */
+}
+
+.option-button button.correct {
+  background-color: green;
+}
+
+.option-button button.incorrect {
+  background-color: red;
 }
 
 .option-button button:hover {
   box-shadow: 2px 2px 2px black;
   background-color: rgb(46, 104, 128);
-  padding: 1rem;
-  color: white;
   font-size: larger;
-  border-style: hidden;
-  transition: 0.1s;
 }
 
 .option-button button:active {
-  border-radius: 30px;
   background-color: rgb(21, 48, 59);
-  padding: 1rem;
-  color: white;
   font-size: larger;
-  border-style: hidden;
-  transition: 0.3s;
+  transition: background-color 0.3s;
+}
+
+.option-button button:not(.selected) {
+  opacity: 0.7;
 }
 
 .quiz-container {
@@ -86,12 +87,14 @@ button:active {
     "one two three"
     ". eval . ";
 }
+
 .eval {
   grid-column-start: 2;
   grid-column-end: 3;
   place-self: center;
   margin: 1rem;
 }
+
 .progress {
   grid-column-start: 2;
   grid-column-end: 3;
@@ -99,6 +102,7 @@ button:active {
   margin: 1.5rem;
   font-weight: 500;
 }
+
 .question {
   grid-column-start: 1;
   grid-column-end: 4;
@@ -125,26 +129,19 @@ button:active {
   color: white;
   font-size: large;
   border-style: hidden;
+  transition: background-color 0.1s;
 }
 
 .footer button:hover {
   box-shadow: 2px 2px 2px black;
   background-color: rgb(46, 104, 128);
-  padding: 1rem;
-  color: white;
   font-size: larger;
-  border-style: hidden;
-  transition: 0.1s;
 }
 
 .footer button:active {
-  border-radius: 30px;
   background-color: rgb(21, 48, 59);
-  padding: 1rem;
-  color: white;
   font-size: larger;
-  border-style: hidden;
-  transition: 0.3s;
+  transition: background-color 0.3s;
 }
 
 .summary-answers {
@@ -155,19 +152,4 @@ button:active {
   margin: 1.5rem;
 }
 
-.correct {
-  background-color: green;
-}
 
-.incorrect {
-  background-color: red;
-}
-
-.disabled {
-  pointer-events: none;
-  opacity: 0.7;
-}
-
-.option-button button:disabled {
-  opacity: 1;
-}

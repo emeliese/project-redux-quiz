@@ -43,61 +43,43 @@ export const QuestionOne = () => {
         <div className="question">
           <h2>{question.questionText}</h2>
         </div>
-        <div
-          className={`option-button option-one ${
-            answerSelected && selectedAnswerIndex === 0 ? "selected" : ""
-          }`}
-        >
+        <div className="option-button">
           <button
             onClick={() => submit(0)}
-            className={`
-              ${answerSelected && selectedAnswerIndex === 0 ? "selected" : ""}
-              ${answerSelected &&
-                selectedAnswerIndex !== null &&
-                selectedAnswerIndex !== 0 &&
-                "incorrect"}
-              ${answerSelected && selectedAnswerIndex === 0 && "correct"}
-            `}
+            className={`${answerSelected && selectedAnswerIndex === 0
+              ? selectedAnswerIndex === question.correctAnswerIndex
+                ? "correct"
+                : "incorrect"
+              : ""
+              }`}
             disabled={answerSelected}
           >
             {question.options[0]}
           </button>
         </div>
-        <div
-          className={`option-button option-two ${
-            answerSelected && selectedAnswerIndex === 1 ? "selected" : ""
-          }`}
-        >
+        <div className="option-button">
           <button
             onClick={() => submit(1)}
-            className={`
-              ${answerSelected && selectedAnswerIndex === 1 ? "selected" : ""}
-              ${answerSelected &&
-                selectedAnswerIndex !== null &&
-                selectedAnswerIndex !== 1 &&
-                "incorrect"}
-              ${answerSelected && selectedAnswerIndex === 1 && "correct"}
-            `}
+            className={`${answerSelected && selectedAnswerIndex === 1
+              ? selectedAnswerIndex === question.correctAnswerIndex
+                ? "correct"
+                : "incorrect"
+              : ""
+              }`}
             disabled={answerSelected}
           >
             {question.options[1]}
           </button>
         </div>
-        <div
-          className={`option-button option-three ${
-            answerSelected && selectedAnswerIndex === 2 ? "selected" : ""
-          }`}
-        >
+        <div className="option-button">
           <button
             onClick={() => submit(2)}
-            className={`
-              ${answerSelected && selectedAnswerIndex === 2 ? "selected" : ""}
-              ${answerSelected &&
-                selectedAnswerIndex !== null &&
-                selectedAnswerIndex !== 2 &&
-                "incorrect"}
-              ${answerSelected && selectedAnswerIndex === 2 && "correct"}
-            `}
+            className={`${answerSelected && selectedAnswerIndex === 2
+                ? selectedAnswerIndex === question.correctAnswerIndex
+                  ? "correct"
+                  : "incorrect"
+                : ""
+              }`}
             disabled={answerSelected}
           >
             {question.options[2]}
@@ -107,9 +89,9 @@ export const QuestionOne = () => {
           {selectedAnswerIndex !== null && (
             <div>
               {selectedAnswerIndex === question.correctAnswerIndex ? (
-                <div className="correct-message">Correct!</div>
+                <div>Correct!</div>
               ) : (
-                <div className="incorrect-message">Incorrect!</div>
+                <div>Incorrect!</div>
               )}
             </div>
           )}
