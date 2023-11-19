@@ -24,7 +24,7 @@ button {
 button:hover {
   border-radius: 30px;
   box-shadow: 2px 2px 2px black;
-  background-color: rgb(46, 104, 128);
+  background-color: rgb(113, 38, 205);
   padding: 1rem;
   color: white;
   font-size: larger;
@@ -33,7 +33,7 @@ button:hover {
 }
 button:active {
   border-radius: 30px;
-  background-color: rgb(21, 48, 59);
+  background-color: rgb(39, 100, 120);
   padding: 1rem;
   color: white;
   font-size: larger;
@@ -41,8 +41,33 @@ button:active {
   transition: 0.3s;
 }
 
-.option-button {
-  margin: 1rem;
+.option-button button {
+  border-radius: 30px;
+  background-color: rgb(62, 149, 184);
+  padding: 1rem;
+  color: white;
+  font-size: large;
+  border-style: hidden;
+}
+
+.option-button button:hover {
+  box-shadow: 2px 2px 2px black;
+  background-color: rgb(46, 104, 128);
+  padding: 1rem;
+  color: white;
+  font-size: larger;
+  border-style: hidden;
+  transition: 0.1s;
+}
+
+.option-button button:active {
+  border-radius: 30px;
+  background-color: rgb(21, 48, 59);
+  padding: 1rem;
+  color: white;
+  font-size: larger;
+  border-style: hidden;
+  transition: 0.3s;
 }
 
 .quiz-container {
@@ -80,12 +105,9 @@ button:active {
   place-self: center;
   margin: 1rem;
 }
-.one {
-  place-self: center;
-}
-.two {
-  place-self: center;
-}
+
+.one,
+.two,
 .three {
   place-self: center;
 }
@@ -95,11 +117,34 @@ button:active {
   grid-template-columns: 1fr 1fr;
   grid-template-areas: " next  restart ";
 }
-.next {
-  margin: 1rem;
+
+.footer button {
+  border-radius: 30px;
+  background-color: rgb(62, 149, 184);
+  padding: 1rem;
+  color: white;
+  font-size: large;
+  border-style: hidden;
 }
-.restart {
-  margin: 1rem;
+
+.footer button:hover {
+  box-shadow: 2px 2px 2px black;
+  background-color: rgb(46, 104, 128);
+  padding: 1rem;
+  color: white;
+  font-size: larger;
+  border-style: hidden;
+  transition: 0.1s;
+}
+
+.footer button:active {
+  border-radius: 30px;
+  background-color: rgb(21, 48, 59);
+  padding: 1rem;
+  color: white;
+  font-size: larger;
+  border-style: hidden;
+  transition: 0.3s;
 }
 
 .summary-answers {
@@ -108,4 +153,21 @@ button:active {
   font-size: larger;
   font-weight: 500;
   margin: 1.5rem;
+}
+
+.correct {
+  background-color: green;
+}
+
+.incorrect {
+  background-color: red;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.option-button button:disabled {
+  opacity: 1;
 }
